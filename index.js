@@ -17,7 +17,8 @@ dotenv.config();
 connectDB();
 const corsOptions = {
   origin: 'https://zippy-profiterole-14fc38.netlify.app/',
-  credentials: true, // access-control-allow-credentials:true
+  credentials: true, 
+  "access-control-allow-credentials":true,
   optionSuccessStatus: 200,
 };
 
