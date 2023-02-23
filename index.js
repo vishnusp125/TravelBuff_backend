@@ -16,7 +16,7 @@ const app = express();
 dotenv.config();
 connectDB();
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://zippy-profiterole-14fc38.netlify.app/',
   credentials: true, // access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
@@ -45,7 +45,7 @@ const server = app.listen(PORT, console.log(`Server started on PORT ${PORT}`));
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://zippy-profiterole-14fc38.netlify.app/",
     cors:true,
   },
 });
