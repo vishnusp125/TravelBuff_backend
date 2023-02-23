@@ -45,10 +45,10 @@ const server = app.listen(PORT, console.log(`Server started on PORT ${PORT}`));
 
 const io = new Server(server, {
   pingTimeout: 60000,
-  cors: {
-    origin: "https://zippy-profiterole-14fc38.netlify.app/",
-    cors:true,
-  },
+  // cors: {
+    // origin: "https://zippy-profiterole-14fc38.netlify.app/",
+    // cors:true,
+  // },
 });
 
 let users = [];
