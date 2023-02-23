@@ -19,7 +19,7 @@ const corsOptions = {
   origin:'https://zippy-profiterole-14fc38.netlify.app',
   credentials: true, 
   // "access-control-allow-credentials":true,
-  optionSuccessStatus: 200,
+  // optionSuccessStatus: 200,
 };
 
 app.use(morgan('dev'));
@@ -47,7 +47,8 @@ const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
     origin:"https://zippy-profiterole-14fc38.netlify.app",
-    cors:true,
+    // cors:true,
+    credentials:true,
   },
 });
 
