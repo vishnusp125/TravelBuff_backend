@@ -87,16 +87,6 @@ export const signup = async (req, res) => {
             name: `${firstName} ${lastName}`
         });
         await sendOTPVerificationEmail(result, res)
-        // const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: "1h" });
-        // const token = await new Token({
-        //     userId: result._id,
-        //     token: crypto.randomBytes(32).toString("hex"),
-        // }).save();
-
-        // const url = `${process.env.BASE_URL}users/${result._id}/verify/{token.token}`;
-        // await sendEmail(result.email, "Verify Email", url)
-        // res.status(201).json({ result, token, message: "An Email sent to your account please verify" })
-        // res.status(201).json({ result, token })
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });
         console.log(error);
@@ -164,7 +154,7 @@ export const signin = async (req, res) => {
 
         if (!isPasswordCorrect) return res.status(400).json({ message: "Invalid credentials" });
 
-        const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, process.env.JWTSECRET, { expiresIn: "3d" })
+        const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, process.env.JWTSECRET, { expiresIn: "7d" })
 
         res.status(200).json({ result: oldUser, token })
     } catch (error) {

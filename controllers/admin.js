@@ -23,7 +23,7 @@ export const Adminsignup = async (req, res) => {
             password: hashedPassword,
         });
 
-        const token = jwt.sign({ email: result.email, id: result._id }, process.env.ADMIN_JWTSECRET, { expiresIn: "1h" });
+        const token = jwt.sign({ email: result.email, id: result._id }, process.env.ADMIN_JWTSECRET, { expiresIn: "7d" });
         res.status(201).json({ result, token })
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });

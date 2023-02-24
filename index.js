@@ -37,7 +37,6 @@ app.use('/conversations', conversationRouter);
 app.use('/messages', messageRouter);
           
 
-
 const PORT = process.env.PORT || 5000
 
 const server = app.listen(PORT, console.log(`Server started on PORT ${PORT}`));
